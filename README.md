@@ -51,6 +51,7 @@ First, navigate to the `atsp` directory:
 
 ```bash
 cd atsp
+```
 
 ### Training
 
@@ -58,6 +59,7 @@ To train the model, run:
 
 ```bash
 python train.py
+```
 
 Before testing, please modify the parameter `problem_cnt` in `test.py` to select the dataset size.
 
@@ -72,3 +74,4 @@ After setting the desired problem size, run:
 
 ```bash
 python test.py
+```

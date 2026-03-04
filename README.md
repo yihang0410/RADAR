@@ -15,5 +15,5 @@ RADAR is a neural combinatorial optimization framework designed for solving asym
 ## Framework
 
 <p align="center">
-<img src="figures/framework.png" width="600">
+<img src="image/framework.png" width="600">
 </p>

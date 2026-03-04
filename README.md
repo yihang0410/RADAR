@@ -2,7 +2,7 @@
 
 **Hang Yi**, **Ziwei Huang**, **Yining Ma**, **Zhiguang Cao**
 
-Paper: https://openreview.net/forum?id=lWdxX5s9T1
+Paper: [[RADAR]](https://openreview.net/forum?id=lWdxX5s9T1)
 
 ---
 

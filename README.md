@@ -28,4 +28,47 @@ The datasets and pretrained checkpoints used in our experiments can be downloade
 - **ATSP checkpoint:** [[Download link]](https://drive.google.com/file/d/1vO98NyK3DAaDBAJa5Y6bzWLfyM8QGs_0/view?usp=sharing)
 - **ACVRP checkpoint:** [[Download link]](https://drive.google.com/file/d/10GFNnGh8pKHZbA-YqkhJj3YdaCEIpzic/view?usp=sharing)
 
-After downloading the files, please unzip them and place them into the corresponding ATSP and ACVRP folders.
+After downloading the files, please unzip them and place them into the corresponding ATSP and ACVRP folders. For instance, place the ATSP dataset directly under the `atsp` directory, and the pretrained checkpoint under `atsp/result/`.
+
+The directory structure should look like:
+
+RADAR  
+│  
+├── atsp  
+│   ├── dataset  
+│   │   └── (ATSP dataset files)  
+│   │  
+│   └── result  
+│       └── radar_official_checkpoint
+
+## Training and Testing
+
+### ATSP
+
+As an example, we describe how to train and evaluate RADAR on the ATSP task.
+
+First, navigate to the `atsp` directory:
+
+```bash
+cd atsp
+
+### Training
+
+To train the model, run:
+
+```bash
+python train.py
+
+Before testing, please modify the parameter `problem_cnt` in `test.py` to select the dataset size.
+
+You can evaluate the model on the following problem sizes:
+
+- `problem_cnt = 100`
+- `problem_cnt = 200`
+- `problem_cnt = 500`
+- `problem_cnt = 1000`
+
+After setting the desired problem size, run:
+
+```bash
+python test.py

@@ -75,3 +75,14 @@ After setting the desired problem size, run:
 ```bash
 python test.py
 ```
+```bash
+
+## Reference
+
+If you find this work or code useful, please consider citing our paper:
+@inproceedings{yiradar,
+  title={RADAR: Learning to Route with Asymmetry-aware Distance Representations},
+  author={Yi, Hang and Huang, Ziwei and Cao, Zhiguang and Ma, Yining},
+  booktitle={The Fourteenth International Conference on Learning Representations}
+}
+```

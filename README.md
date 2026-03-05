@@ -8,9 +8,9 @@
 
 ## Overview
 
-RADAR is a neural combinatorial optimization framework designed for solving asymmetric routing problems, such as the **Asymmetric Traveling Salesman Problem (ATSP)**.
+RADAR is a neural combinatorial optimization framework designed for solving asymmetric routing problems, such as the Asymmetric Traveling Salesman Problem (ATSP).
 
-The proposed framework enhances neural routing solvers with the ability to effectively model asymmetric distance matrices. RADAR leverages **Singular Value Decomposition (SVD)** to initialize compact embeddings that capture static asymmetry, and introduces **Sinkhorn normalization** to model dynamic asymmetry during attention interactions.
+The proposed framework enhances neural routing solvers with the ability to effectively model asymmetric distance matrices. RADAR leverages Singular Value Decomposition (SVD) to initialize compact embeddings that capture static asymmetry, and introduces Sinkhorn normalization to model dynamic asymmetry during attention interactions.
 
 Extensive experiments on both synthetic and real-world benchmarks demonstrate strong generalization ability and superior performance across various asymmetric VRPs.
 

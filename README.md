@@ -102,6 +102,12 @@ python test.py
 
 ---
 
+## Acknowledgements
+
+This repository is built upon MatNet. We sincerely thank the authors for making their code publicly available, which greatly facilitated the development of this project.
+
+---
+
 ## Citation
 
 If you find this work or code useful in your research, please consider citing our paper:

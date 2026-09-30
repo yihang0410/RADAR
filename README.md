@@ -115,7 +115,7 @@ If you find this work or code useful in your research, please consider citing ou
 ```bibtex
 @inproceedings{yi2026radar,
   title={RADAR: Learning to Route with Asymmetry-aware Distance Representations},
-  author={Yi, Hang and Huang, Ziwei and Cao, Zhiguang and Ma, Yining},
+  author={Yi, Hang and Huang, Ziwei and Ma, Yining and Cao, Zhiguang},
   booktitle={International Conference on Learning Representations (ICLR)},
   year={2026}
 }

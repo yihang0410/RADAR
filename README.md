@@ -79,9 +79,9 @@ python test.py
 
 ## Real-World Routing (RRNCO Benchmark)
 
-[`rrnco_radar/`](rrnco_radar/) applies RADAR to the real-world ATSP, ACVRP and ACVRPTW benchmark
+[`RRNCO_radar/`](RRNCO_radar/) applies RADAR to the real-world ATSP, ACVRP and ACVRPTW benchmark
 of [RRNCO](https://github.com/ai4co/real-routing-nco), with trained checkpoints. See
-[`rrnco_radar/README.md`](rrnco_radar/README.md) for training and testing.
+[`RRNCO_radar/README.md`](RRNCO_radar/README.md) for training and testing.
 
 ---
 

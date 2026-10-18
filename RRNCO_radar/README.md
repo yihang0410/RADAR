@@ -7,7 +7,7 @@ encoder replaced by RADAR's.
 ## Setup
 
 ```bash
-cd rrnco_radar
+cd RRNCO_radar
 pip install -e .
 python scripts/download_hf.py --no-models    # RRNCO data and test sets (~2.2 GB)
 ```

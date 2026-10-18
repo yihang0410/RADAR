@@ -102,6 +102,14 @@ python test.py
 
 ---
 
+## Real-World Routing (RRNCO Benchmark)
+
+[`rrnco_radar/`](rrnco_radar/) applies RADAR to the real-world ATSP, ACVRP and ACVRPTW benchmark
+of [RRNCO](https://github.com/ai4co/real-routing-nco), with trained checkpoints. See
+[`rrnco_radar/README.md`](rrnco_radar/README.md) for training and testing.
+
+---
+
 ## Acknowledgements
 
 This repository is built upon MatNet. We sincerely thank the authors for making their code publicly available, which greatly facilitated the development of this project.

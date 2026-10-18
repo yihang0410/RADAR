@@ -1,8 +1,13 @@
-# RADAR: Learning to Route with Asymmetry-aware Distance Representations
+<h1 align="center">RADAR: Learning to Route with Asymmetry-aware Distance Representations</h1>
 
-**Hang Yi**, **Ziwei Huang**, **Yining Ma**, **Zhiguang Cao**
+<p align="center">
+  <b>Hang Yi</b>, <b>Ziwei Huang</b>, <b>Yining Ma</b>, <b>Zhiguang Cao</b>
+</p>
 
-📄 Paper: [RADAR](https://openreview.net/forum?id=lWdxX5s9T1)
+<p align="center">
+  <a href="https://openreview.net/forum?id=lWdxX5s9T1"><img src="https://img.shields.io/badge/Paper-OpenReview-8c1b13.svg" alt="Paper"></a>
+  <img src="https://img.shields.io/badge/ICLR-2026-1f6feb.svg" alt="ICLR 2026">
+</p>
 
 ---
 
@@ -10,13 +15,9 @@
 
 RADAR is a neural combinatorial optimization framework designed for solving asymmetric routing problems, such as the Asymmetric Traveling Salesman Problem (ATSP).
 
-The proposed framework enhances neural routing solvers with the ability to effectively model asymmetric distance matrices. RADAR leverages Singular Value Decomposition (SVD) to initialize compact embeddings that capture static asymmetry, and introduces Sinkhorn normalization to model dynamic asymmetry during attention interactions.
+The proposed framework enhances neural routing solvers with the ability to effectively model asymmetric distance matrices. RADAR leverages **Singular Value Decomposition (SVD)** to initialize compact embeddings that capture static asymmetry, and introduces **Sinkhorn normalization** to model dynamic asymmetry during attention interactions.
 
 Extensive experiments on both synthetic and real-world benchmarks demonstrate strong generalization ability and superior performance across various asymmetric VRPs.
-
----
-
-## Framework
 
 <p align="center">
   <img src="image/framework.png" width="750">
@@ -28,73 +29,44 @@ Extensive experiments on both synthetic and real-world benchmarks demonstrate st
 
 The datasets and pretrained checkpoints used in our experiments can be downloaded from the following links.
 
-### Datasets
+| Task | Dataset | Pretrained Model |
+|:--|:--:|:--:|
+| ATSP | [Google Drive](https://drive.google.com/file/d/1dwKlConq9AhOObcTu-57wOsxr47FEhHU/view?usp=sharing) | [Google Drive](https://drive.google.com/file/d/1vO98NyK3DAaDBAJa5Y6bzWLfyM8QGs_0/view?usp=sharing) |
+| ACVRP | [Google Drive](https://drive.google.com/file/d/1OdzFHqj_kvaSgHMRO0l4nvEuyr7RV2fK/view?usp=sharing) | [Google Drive](https://drive.google.com/file/d/10GFNnGh8pKHZbA-YqkhJj3YdaCEIpzic/view?usp=sharing) |
 
-- **ATSP dataset:**  
-https://drive.google.com/file/d/1dwKlConq9AhOObcTu-57wOsxr47FEhHU/view?usp=sharing
-
-- **ACVRP dataset:**  
-https://drive.google.com/file/d/1OdzFHqj_kvaSgHMRO0l4nvEuyr7RV2fK/view?usp=sharing
-
-
-### Pretrained Models
-
-- **ATSP checkpoint:**  
-https://drive.google.com/file/d/1vO98NyK3DAaDBAJa5Y6bzWLfyM8QGs_0/view?usp=sharing
-
-- **ACVRP checkpoint:**  
-https://drive.google.com/file/d/10GFNnGh8pKHZbA-YqkhJj3YdaCEIpzic/view?usp=sharing
-
-
-After downloading the files, please unzip them and place them into the corresponding folders.
-
-For example:
+After downloading the files, please unzip them and place them into the corresponding folders. For example:
 
 ```
 RADAR
-│
 ├── atsp
 │   ├── dataset
 │   │   └── (ATSP dataset files)
-│   │
 │   └── result
 │       └── radar_official_checkpoint
+└── ...
 ```
 
 ---
 
 ## Training and Testing
 
-### ATSP Example
-
 Below we provide an example for training and evaluating RADAR on the **ATSP task**.
 
-First, navigate to the `atsp` directory:
+**1. Navigate to the `atsp` directory**
 
 ```bash
 cd atsp
 ```
 
-### Training
-
-To train the model:
+**2. Train**
 
 ```bash
 python train.py
 ```
 
-### Testing
+**3. Test**
 
-Before testing, modify the parameter `problem_cnt` in `test.py` to select the dataset size.
-
-Supported problem sizes include:
-
-- `problem_cnt = 100`
-- `problem_cnt = 200`
-- `problem_cnt = 500`
-- `problem_cnt = 1000`
-
-After setting the desired problem size, run:
+Set `problem_cnt` in `test.py` to the dataset size (`100`, `200`, `500` or `1000`), then run:
 
 ```bash
 python test.py

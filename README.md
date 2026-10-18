@@ -34,28 +34,31 @@ The datasets and pretrained checkpoints used in our experiments can be downloade
 | ATSP | [Google Drive](https://drive.google.com/file/d/1dwKlConq9AhOObcTu-57wOsxr47FEhHU/view?usp=sharing) | [Google Drive](https://drive.google.com/file/d/1vO98NyK3DAaDBAJa5Y6bzWLfyM8QGs_0/view?usp=sharing) |
 | ACVRP | [Google Drive](https://drive.google.com/file/d/1OdzFHqj_kvaSgHMRO0l4nvEuyr7RV2fK/view?usp=sharing) | [Google Drive](https://drive.google.com/file/d/10GFNnGh8pKHZbA-YqkhJj3YdaCEIpzic/view?usp=sharing) |
 
-After downloading the files, please unzip them and place them into the corresponding folders. For example:
+After downloading, unzip each dataset archive into the task folder and each checkpoint archive
+into its `result/` folder:
 
 ```
 RADAR
-├── atsp
-│   ├── dataset
-│   │   └── (ATSP dataset files)
-│   └── result
-│       └── radar_official_checkpoint
-└── ...
+└── Matnet_radar
+    ├── atsp
+    │   ├── dataset/ATSP{100,200,500,1000}.npz
+    │   └── result/radar_official_checkpoint/checkpoint-2100.pt
+    └── acvrp
+        ├── dataset/ACVRP{100,200,500,1000}.npz
+        └── result/radar_official_checkpoint/checkpoint-2100.pt
 ```
 
 ---
 
 ## Training and Testing
 
-Below we provide an example for training and evaluating RADAR on the **ATSP task**.
+Below we provide an example for training and evaluating RADAR on the **ATSP task**; ACVRP works the
+same way in `Matnet_radar/acvrp`.
 
 **1. Navigate to the `atsp` directory**
 
 ```bash
-cd atsp
+cd Matnet_radar/atsp
 ```
 
 **2. Train**

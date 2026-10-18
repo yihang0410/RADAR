@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+
+# downloaded datasets and checkpoints, training/test outputs
+Matnet_radar/*/dataset/
+Matnet_radar/*/result/

@@ -68,9 +68,9 @@ tester_params = {
     'epochs': 1,
     'train_episodes': 100*1000,
     'test_batch_size': test_batch_size[problem_cnt],
-    'npz_path': f'/common/home/users/h/hang.yi.2024/Code/MatNet-Distance/ACVRP/ACVRP/acvrp_{problem_cnt}_instances.npz',
+    'npz_path': f'dataset/ACVRP{problem_cnt}.npz',
     'model_load': {
-        'path': '/common/home/users/h/hang.yi.2024/Code/final_radar/code/acvrp/result/radar_official_checkpoint',
+        'path': 'result/radar_official_checkpoint',
         'epoch': 2100, 
     }
 }

@@ -80,14 +80,14 @@ python test.py
 ## Real-World Routing (RRNCO Benchmark)
 
 [`RRNCO_radar/`](RRNCO_radar/) applies RADAR to the real-world ATSP, ACVRP and ACVRPTW benchmark
-of [RRNCO](https://github.com/ai4co/real-routing-nco), with trained checkpoints. See
+of [RRNCO](https://github.com/ai4co/real-routing-nco), with checkpoints retrained with this code. See
 [`RRNCO_radar/README.md`](RRNCO_radar/README.md) for training and testing.
 
 ## Multi-Task Asymmetric VRPs (RouteFinder)
 
 [`RouteFinder_radar/`](RouteFinder_radar/) trains RADAR jointly on 16 asymmetric VRP variants (CVRP with open
 routes, backhauls, distance limits and time windows) in the [RouteFinder](https://github.com/ai4co/routefinder)
-framework, with a trained checkpoint. See [`RouteFinder_radar/README.md`](RouteFinder_radar/README.md) for
+framework, with a checkpoint retrained with this code. See [`RouteFinder_radar/README.md`](RouteFinder_radar/README.md) for
 training and testing.
 
 ---

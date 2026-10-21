@@ -16,7 +16,7 @@ For Blackwell GPUs install the CUDA 12.8 build of PyTorch
 (`pip install torch==2.7.0 --index-url https://download.pytorch.org/whl/cu128`).
 The bundled `rl4co/` is used, so do not install the `rl4co` package.
 
-Download the test and validation sets ([Google Drive](GOOGLE_DRIVE_LINK)) and unzip them here, giving
+Download the test and validation sets ([Google Drive](https://drive.google.com/file/d/11eYr-td8NMJFEohBKxok-Aqgey-nTrGd/view?usp=sharing)) and unzip them here, giving
 `data/<variant>/test/100.npz` (1000 instances per variant) and `data/<variant>/val/100.npz`.
 
 ## Test with our checkpoint

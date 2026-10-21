@@ -1,0 +1,5 @@
+# This file also marks the project root for pyrootutils (run.py); keep it.
+/data/
+/logs/
+__pycache__/
+*.pyc

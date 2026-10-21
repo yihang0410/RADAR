@@ -1,0 +1,64 @@
+# @package _global_
+# RADAR (SVD initialization + Sinkhorn-normalized MatNet attention) trained jointly on
+# 16 asymmetric VRP variants (N=100) inside the RouteFinder multi-task framework.
+# Training instances are generated on the fly (each instance independently enables
+# open route / time windows / distance limit / backhaul with probability 0.5).
+
+defaults:
+  - override /model: routefinder.yaml
+  - override /env: mtvrp.yaml
+  - override /callbacks: default.yaml
+  - override /trainer: default.yaml
+  - override /logger: csv.yaml
+  - _self_
+
+seed: 69420
+test: False   # evaluate with test_radar.py instead
+
+env:
+  data_dir: ${paths.root_dir}/data
+  generator_params:
+    num_loc: 100
+    variant_preset: "all"
+  val_file: [cvrp/val/100.npz, ovrp/val/100.npz, ovrpb/val/100.npz, ovrpbl/val/100.npz,
+             ovrpbltw/val/100.npz, ovrpbtw/val/100.npz, ovrpl/val/100.npz, ovrpltw/val/100.npz,
+             ovrptw/val/100.npz, vrpb/val/100.npz, vrpl/val/100.npz, vrpbltw/val/100.npz,
+             vrpbtw/val/100.npz, vrpbl/val/100.npz, vrpltw/val/100.npz, vrptw/val/100.npz]
+  val_dataloader_names: [cvrp100, ovrp100, ovrpb100, ovrpbl100,
+                         ovrpbltw100, ovrpbtw100, ovrpl100, ovrpltw100,
+                         ovrptw100, vrpb100, vrpl100, vrpbltw100,
+                         vrpbtw100, vrpbl100, vrpltw100, vrptw100]
+  test_file: null
+
+model:
+  policy:
+    encoder_use_post_layers_norm: False
+    extra_encoder_kwargs:
+      init_type: svd        # SVD-based node initialization (top-10 singular vectors)
+      attn_norm: sinkhorn   # Sinkhorn normalization in encoder attention
+      cost_norm: True       # attention uses the per-instance standardized distance matrix
+      qk_bias: True
+  batch_size: 256
+  val_batch_size: 128
+  test_batch_size: 128
+  train_data_size: 100_000
+  val_data_size: 64
+  test_data_size: 64
+  optimizer_kwargs:
+    lr: 3e-4
+    weight_decay: 1e-6
+  lr_scheduler: "MultiStepLR"
+  lr_scheduler_kwargs:
+    milestones: [270, 295]
+    gamma: 0.1
+  normalize_reward: "exponential"
+  norm_operation: "div"
+  alpha: 0.25
+
+trainer:
+  max_epochs: 300
+
+callbacks:
+  model_checkpoint:
+    dirpath: logs/radar-mtvrp100/${now:%Y-%m-%d}_${now:%H-%M-%S}/checkpoints
+    monitor: "val/reward/cvrp100"

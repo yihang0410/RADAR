@@ -1,0 +1,19 @@
+# Tested with Python 3.12. For Blackwell GPUs (sm_120) install the CUDA 12.8 build of torch:
+#   pip install torch==2.7.0 --index-url https://download.pytorch.org/whl/cu128
+# Do not install the rl4co pip package: the vendored copy in rl4co/ is used.
+torch==2.7.0
+lightning==2.5.1.post0
+tensordict==0.8.1
+torchrl==0.8.0
+hydra-core==1.3.2
+hydra-colorlog==1.2.0
+omegaconf==2.3.0
+pyrootutils==1.0.4
+numpy==2.2.5
+scipy==1.15.2
+einops==0.8.1
+rich==14.0.0
+# imported when the vendored rl4co package is loaded (not used by RADAR itself)
+matplotlib==3.10.1
+pyvrp==0.9.1
+robust-downloader==0.0.2
